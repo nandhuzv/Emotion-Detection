@@ -22,13 +22,13 @@ while True:
     for(x, y, w, h) in faces:
         cv2.rectangle(frame, (x,y), (x+w, y+h), (0,255,0), 2)
 
-    font = cv2.FONT_HERSHEY_SIMPLEX
+    font = cv2.FONT_HERSHEY_PLAIN
 
     cv2.putText(frame,
                 result['dominant_emotion'],
-                (50,50),
-                font, 3,
-                (0, 0, 255),
+                (x-5,y-10),
+                font, 1,
+                (0, 255, 0),
                 2,
                 cv2.LINE_4)
     cv2.imshow('Demo Video',frame)
@@ -39,6 +39,5 @@ while True:
 cap.release()
 cv2.destroyAllWindows()
 
-if result == 'neutral':
-    webbrowser.open('www.google.com')
+
 
